@@ -1,6 +1,8 @@
 package com.google.gwt.sample.stockwatcher.client;
 
 import java.util.ArrayList;
+
+import java.util*;
 import java.util.Date;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -40,24 +42,7 @@ public class StockWatcher implements EntryPoint {
    * Entry point method.
    */
   public void onModuleLoad() {
-	    // Check login status using login service.
-	    System.out.println("Git Change4");
-	    System.out.println("Git Change2");
-	    LoginServiceAsync loginService = GWT.create(LoginService.class);
-	    loginService.login(GWT.getHostPageBaseURL(), new AsyncCallback<LoginInfo>() {
-	      public void onFailure(Throwable error) {
-	    	  handleError(error);
-	      }
 
-	      public void onSuccess(LoginInfo result) {
-	        loginInfo = result;
-	        if(loginInfo.isLoggedIn()) {
-	    loadStockWatcher();
-	        } else {
-	            loadLogin();
-	          }
-	        }
-	      });
 	  }
   
   private void loadLogin() {
@@ -66,6 +51,7 @@ public class StockWatcher implements EntryPoint {
 	    loginPanel.add(loginLabel);
 	    loginPanel.add(signInLink);
 	    RootPanel.get("stockList").add(loginPanel);
+	    System.out.println("Broken Test");
 	  }
 
   private void loadStockWatcher() {
